@@ -5,6 +5,7 @@ import threading
 TOKEN_TELEGRAM = "8247777433:AAGLIlTGV6FwqrPEWhMuVimr3g2fI-jHIiQ"
 MI_CHAT_ID = 1326048001
 CANAL_CARTAS = -4905992224
+CANAL_VIDEOJUEGOS = -4950809772 
 
 #instancioamos el bot
 bot = telebot.TeleBot(TOKEN_TELEGRAM)
@@ -48,6 +49,9 @@ def recibir_mensajes():
     bot.infinity_polling() #Bucle infinito que compruba el mensaje del usuario
     
 
+
+
+
 #===============================
 #           MAIN
 #=================================
@@ -64,5 +68,5 @@ if __name__ == '__main__':
     hilo_bot = threading.Thread(name = "hilo_bot",target=recibir_mensajes)
     hilo_bot.start()
     print('Bot Iniciado')
-    bot.send_message(CANAL_CARTAS,"Hola jefe")
+    bot.send_message(MI_CHAT_ID,"Bot incializado")
         
